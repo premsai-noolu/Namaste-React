@@ -1,19 +1,55 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const parent=React.createElement(
-    "div",
-    {id:"parent"},[
-    React.createElement("div",{id:"child"},[
-    React.createElement("h1",{}, "This is Namste React🚀"),
-    React.createElement("h2",{}, "fcgvhbjn")
-    ]),
-    React.createElement("div",{id:"child2"},[
-    React.createElement("h1",{}, "im a h1 tag"),
-    React.createElement("h2",{}, "im a h2 tag")
-    ]),
+// React.createElement =>ReactElement-Js Object =>HTMLElement (render)
 
-]
+const heading = React.createElement("h1", { id: "heading" }, "Namste React🚀");
+
+console.log(heading);
+
+//jsx- HTML-like OR xml-like syntax
+
+//jsx (transpiled before it reaches the Js engine)-Parcel-Babel
+
+//JSX =>
+
+const jsxHeading = (
+  <h1 id="heading" tabIndex="2">
+    Namaste React using JSX🚀
+  </h1>
 );
-const root=ReactDOM.createRoot(document.getElementById("root"));
-root.render(parent);
+
+//react Functional component
+
+const HeadingComponent = () => {
+  return <h1>Namaste React Functional component using JSX🚀🚀</h1>;
+};
+
+const Title = () => (
+  <h1 className="head" tabIndex="5">
+    Namaste react using jsx
+  </h1>
+);
+
+const elem = <span>React element</span>;
+
+const HeadingComponent2 = () => (
+  <div id="container">
+    <h1 className="heading">Namaste React Functional Component2 using JSX🚀</h1>
+  </div>
+);
+
+const title = (
+  <div id="container2">
+    <h1 className="head" tabIndex="5">
+      {elem}
+      Namste everyone
+    </h1>
+    {HeadingComponent2()}
+  </div>
+);
+
+console.log(jsxHeading);
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(title);
